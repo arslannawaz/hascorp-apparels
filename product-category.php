@@ -61,7 +61,7 @@ Main Content -->
 							</div>
 							<div class="col-lg-8 col-md-7 col-sm-12 iq-mtb-30">
 								<div class="product-detail">
-									<h6><a href="product-detail.html" class="iq-tw-6">Product Name</a></h6>
+									<h6><a href="product-detail" class="iq-tw-6">Product Name</a></h6>
 									<div class="iq-rating">
 										<ul class="list-inline">
 											<li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
