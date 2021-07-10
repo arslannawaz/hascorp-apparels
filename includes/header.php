@@ -67,7 +67,7 @@
                         <!-- menu logo -->
                         <ul class="menu-logo">
                             <li>
-                                <a href="index.php">
+                                <a href="index">
                                     <img id="logo_img" src="images/logo/FINAL.png" alt="logo">
                                 </a>
                             </li>
@@ -75,11 +75,11 @@
                         <!-- menu links -->
                         <ul class="menu-links">
                             <!-- active class -->
-                            <li class="active"><a href="index.php">Home</a>                             
+                            <li class="active"><a href="index">Home</a>                             
                             </li>
-                            <li><a href="about-us.php">About Us</a>
+                            <li><a href="about-us">About Us</a>
                             </li>
-                            <li><a href="all-products.html">Products</a>
+                            <li><a href="#">Products</a>
                                 <!-- drop down multilevel  -->
                                 <ul class="drop-down-multilevel">
                                     <?php 
@@ -93,7 +93,7 @@
                                     }
                                     ?>
 
-                                    <li><a style="font-weight: bold;" href="all-products.php">View All Products<i class=""></i> </a>
+                                    <li><a style="font-weight: bold;" href="all-products">View All Products<i class=""></i> </a>
                                     </li>
                                 </ul>
                             </li>
