@@ -101,7 +101,7 @@
                             </li> -->
                             <li><a href="make-an-inquiry.html">Make an Inquiry</a>
                             </li>
-                            <li><a href="contact-us.html">Contact Us</a>
+                            <li><a href="contact-us">Contact Us</a>
                             </li>
                             
                         </ul>
