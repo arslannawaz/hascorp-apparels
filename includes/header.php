@@ -86,7 +86,7 @@
                                     if(!empty($sub_categories)){
                                     for($i=0;$i<count($sub_categories);$i++){ 
                                     ?>
-                                    <li><a href="product-category"><?php echo $sub_categories[$i]['sub_category_title'] ?><i class=""></i> </a>
+                                    <li><a href="product-category?id=<?php echo $sub_categories[$i]['id']; ?>"><?php echo $sub_categories[$i]['sub_category_title'] ?><i class=""></i> </a>
                                     </li>
                                     <?php 
                                         }

@@ -89,48 +89,30 @@ Main Content -->
     <section class="iq-shophome">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12 iq-mtb-15">
-                <a target="_blank" href="product-category.html">
-                    <div class="offer-box">
-                        <img class="img-fluid" src="images/sub headers/SIZED 613X370 (2).png" alt="">
-                        <div class="offer-content text-left">
-                            <!-- <div class="bigtitle-text">Woman</div>
-                            <h5 class="iq-tw-6">Summer Collections</h5>
-                            <div class="off-text color-box1">50% off</div>
-                            <a class="button-line" href="#" role="button">View Collection <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                            </a> -->
+                <?php
+					if(!empty($sub_categories)){
+						for($i=0;$i<count($sub_categories);$i++){ 
+				?>
+                <div class="col-lg-3 col-md-12 col-sm-12 iq-mtb-15">
+                    <a target="_blank" href="product-category?id=<?php echo $sub_categories[$i]['id']; ?>">
+                        <div class="offer-box">
+                            <img class="img-fluid" src="<?php echo $sub_categories[$i]['image']; ?>" alt="">
+                            <div class="offer-content text-left">
+                                <!-- <div class="bigtitle-text">Woman</div>
+                                <h5 class="iq-tw-6">Summer Collections</h5>
+                                <div class="off-text color-box1">50% off</div>
+                                <a class="button-line" href="#" role="button">View Collection <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                                </a> -->
+                            </div>
                         </div>
-                    </div>
-                </a>
+                    </a>
                 </div>
-                <div class="col-lg-4 col-md-12 col-sm-12 iq-mtb-15">
-                    <a target="_blank" href="product-category.html">
-                    <div class="offer-box">
-                        <img class="img-fluid" src="images/sub headers/SIZED 613X370 (3).png" alt="">
-                        <div class="offer-content text-center">
-                            <!-- <div class="bigtitle-text">Accessories</div>
-                            <h5 class="iq-tw-6">Spring Collections</h5>
-                            <div class="off-text color-box2">10% off</div>
-                            <a class="button-line" href="#" role="button">View Collection <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                            </a> -->
-                        </div>
-                    </div>
-                </a>
-                </div>
-                <div class="col-lg-4 col-md-12 col-sm-12 iq-mtb-15">
-                    <a target="_blank" href="product-category.html">
-                    <div class="offer-box">
-                        <img class="img-fluid" src="images/sub headers/SIZED 613X370 (1).png" alt="">
-                        <div class="offer-content text-right">
-                            <!-- <div class="bigtitle-text">Man</div>
-                            <h5 class="iq-tw-6">Rainy Collections</h5>
-                            <div class="off-text color-box3">30% off</div>
-                            <a class="button-line" href="#" role="button">View Collection <i class="fa fa-angle-double-right" aria-hidden="true"></i>
-                            </a> -->
-                        </div>
-                    </div>
-                </a>
-                </div>
+                <?php
+                        }
+                    }
+                ?>
+                
+                
             </div>
         </div>
     </section>
