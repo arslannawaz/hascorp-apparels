@@ -35,8 +35,12 @@
 			<div class="row align-items-center">
 				<div class="col-lg-8">
 					<div class="iq-mb-0">
-						<div class="iq-font-white iq-tw-6">Product Category</div>
-						<h2 class="iq-font-white iq-tw-6">Product Subcategory</h2>
+						<?php  
+							$subcat=getSubCategoryById($cat_id); 
+							$cat=getCategoryById($subcat['category_id']);
+						?>
+						<div class="iq-font-white iq-tw-6"><?php echo $cat['title'] ?></div>
+						<h2 class="iq-font-white iq-tw-6"><?php echo $subcat['sub_category_title'] ?></h2>
 					</div>
 				</div>
 				<div class="col-lg-4">

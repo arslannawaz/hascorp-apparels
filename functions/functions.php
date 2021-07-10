@@ -57,4 +57,12 @@ function getSubCategoryById($id){
     return $row;
 }
 
+function getCategoryById($id){
+    include('includes/database.php');
+    $sql = "SELECT * from categories where id='$id'";
+    $result = $conn->query($sql);
+    $row = mysqli_fetch_assoc($result);
+    return $row;
+}
+
 ?>

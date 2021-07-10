@@ -35,7 +35,7 @@ We Are Best -->
                         <h3 class="small-title iq-tw-6">Who Are We?</h3>
                         <p> HASCORP Apparels is one of the most renowned manufacturers and exporters of sports, racing,  and safety apparels based in Sialkot, Pakistan. Sialkot - Pakistan, is itself known worldwide for the manufacting and export of sports goods and apparels. HASCORP Apparels was founded in 2007 with the sole purpose to provide its customers with apparels and accessories having highest quality, comfort, and the most affordable prices. </p>
                         <p> HASCORP Apparels deals with the manufacturing of all kinds of Sports, Racing, and Safety apparels. The apparels we manufacture are first designed and then manufactured according to the customers' told specifications i.e. sizes, fabric type, quantities, etc. We're the bulk producers of Racing Balaclavas, Hoodies, Jackets, Uniforms, Racing Suits, Bags, etc.</p>
-                        <a class="button" target="_blank" href="all-products.html" role="button">View Sample Products</a>
+                        <a class="button" target="_blank" href="all-products" role="button">View Sample Products</a>
                     </div>
                     <div class="col-lg-6 col-sm-12 iq-re-9-mt50">
                         <img class="img-fluid center-block" src="images/headers/about-us-header-03.jpg" alt="">
