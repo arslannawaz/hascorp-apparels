@@ -1,5 +1,12 @@
 <?php
-    include('includes/header.php');
+	include('includes/header.php');
+	if(!$_GET['id']){
+		header("location: index");
+	}
+	else{
+		$product_id=$_GET['id'];
+		$product=getProductById($product_id);
+	}
 ?>
    
     <!--======= Breadcrumb Left With BG Image =======-->
@@ -14,7 +21,7 @@
                 <div class="col-lg-6 col-sm-12">
                     <nav aria-label="breadcrumb" class="text-right">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="index.html"><i class="ion-android-home"></i> Home</a></li>
+                            <li class="breadcrumb-item"><a href="index"><i class="ion-android-home"></i> Home</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Product Detail</li>
                         </ol>
                     </nav>
@@ -32,7 +39,7 @@ Main Content -->
 					<div class="col-lg-4 col-md-5 col-sm-12">
 						<div class="iq-slick">
 							<div class="slider slider-for">
-								<div><img class="img-fluid" alt="#" src="images/shop/thumb/01.jpg"></div>
+								<div><img class="img-fluid" alt="#" src="<?php echo $product['image'] ?>"></div>
 								
 							</div>
 							
@@ -40,7 +47,7 @@ Main Content -->
 					</div>
 					<div class="col-lg-8 col-md-5 col-sm-12">
 						<div class="iq-shopdetail indc">
-							<h3 class="iq-tw-6">Product Name</h3>
+							<h3 class="iq-tw-6"><?php echo $product['title'] ?></h3>
 							<div class="iq-rating">
 								<ul class="list-inline float-left">
 									<li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
@@ -51,21 +58,22 @@ Main Content -->
 								</ul>
 							</div>
 							<div class="shop-price w-100 d-inline-block">
-								<p>PN <strong>HPX101</strong></p>
+								<p>PN <strong>HPX<?php echo $product['id'] ?></strong></p>
 							</div>
 							<div class="iq-pt-15"><b>Product Detail:</b></div>
 							<p>
-								There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.
+								<?php echo $product['detail'] ?>
 							</p>
 							<div><b>Material &amp; Care:</b></div>
 							<ul>
-								<li>Cotton</li>
-								<li>Machine-wash</li>
+								<?php echo $product['material_care'] ?>
 							</ul>
 							<div class="product_meta iq-pt-15">
-								<div> <b>SKU:</b> 1010</div>
-								<div> <b>Category:</b> <a class="a-dark" href="#">Clothes</a></div>
-								<div> <b>Availability:</b> <a class="a-dark" href="#">Available</a></div>
+								<div> <b>SKU:</b> <?php echo $product['sku'] ?></div>
+								<?php  $subcat=getSubCategoryById($product['sub_category_id']); ?>
+
+								<div> <b>Category:</b> <a class="a-dark" href="#"><?php echo $subcat['sub_category_title'] ?></a></div>
+								<div> <b>Availability:</b> <a class="a-dark" href="#"><?php echo $product['Availability'] ?></a></div>
 							</div>
 							<!--Quantity -->
 							<ul class="align-items-center selection-box">
@@ -133,40 +141,30 @@ Main Content -->
 							</ul>
 							<div class="tab-content" id="myTabContent">
 								<div class="tab-pane active show" id="home" role="tabpanel" aria-labelledby="home-tab">
-									<p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable. If you are going to use a passage of Lorem
-										Ipsum, you need to be sure there isn't anything embarrassing hidden in the middle of text. All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary. </p>
-									<ul class="listing-mark iq-mtb-30 iq-tw-6 iq-font-black">
-										<li>Simply dummy text of the Lorem Ipsum is printing and type setting.</li>
-										<li>Dummy text of the printing and typesetting industry.</li>
-										<li>Text of the printing and typesetting industry Lorem Ipsum has been.</li>
-										<li>Ipsum has been the industry's standard dummy since the 1500s,</li>
-									</ul>
-									<p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content
-										here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.
-										Various versions have evolved over the years. </p>
+									<p><?php echo $product['description'] ?></p>
 								</div>
 								<div class="tab-pane" id="profile" role="tabpanel" aria-labelledby="profile-tab">
 									<table class="table">
 										<tbody>
 											<tr>
 												<th scope="row">Weight/Article</th>
-												<td>0.15 kg</td>
+												<td><?php echo $product['weight_article'] ?></td>
 											</tr>
 											<tr>
 												<th scope="row">GSM</th>
-												<td>1, 2, 3, 4, 5</td>
+												<td><?php echo $product['gsm'] ?></td>
 											</tr>
 											<tr>
 												<th scope="row">Care</th>
-												<td>US$0.30, US$32, US$2</td>
+												<td><?php echo $product['care'] ?></td>
 											</tr>
 											<tr>
 												<th scope="row">Printing</th>
-												<td>w1, w2 &amp; w3</td>
+												<td><?php echo $product['printing'] ?></td>
 											</tr>
 											<tr>
 												<th scope="row">MOQ</th>
-												<td>US$32</td>
+												<td><?php echo $product['moq'] ?></td>
 											</tr>
 										</tbody>
 									</table>

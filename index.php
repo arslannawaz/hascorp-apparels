@@ -1,5 +1,6 @@
 <?php
     include('includes/header.php');
+    $products=getProducts();
 ?>
 <!--=================================
 Banner -->
@@ -147,10 +148,15 @@ Main Content -->
             <div class="row">
                 <div class="col-sm-12">
                     <div class="owl-carousel arrow-4 popup-gallery" data-autoplay="true" data-loop="true" data-nav="true" data-dots="false" data-items="4" data-items-laptop="3" data-items-tab="2" data-items-mobile="1" data-items-mobile-sm="1" data-margin="15">
+                        
+                        <?php
+                        if(!empty($products)){
+                            for($i=0;$i<8;$i++){
+                        ?>
                         <div class="item">
                             <div class="iq-productbox">
                                 <div class="product-image">
-                                    <img class="hover" src="images/shop/thumb/01.jpg" alt="product image">
+                                    <img class="hover" src="<?php echo $products[$i]['image'] ?>" alt="product image">
                                     <ul class="product-icon">
                                         <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                         <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
@@ -168,165 +174,21 @@ Main Content -->
                                             
                                         </ul>
                                     </div>
-                                    <h6><a href="#">Product Name</a></h6>
-                                    <p>Fashion</p>
+                                    <h6><a href="product-detail?id=<?php echo $products[$i]['id'] ?>"><?php echo $products[$i]['title'] ?></a></h6>
+                                    <?php  $subcat=getSubCategoryById($products[$i]['sub_category_id']); ?>
+                                    <p><?php echo $subcat['sub_category_title'] ?></p>
                                     <div class="shop-price">
                                         <!-- <del>$130.00</del>&nbsp;&nbsp;<strong>$98.50</strong> -->
-                                        <p>PN <strong>HPX101</strong></p>
+                                        <p>PN <strong>HPX<?php echo $products[$i]['id'] ?></strong></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="iq-productbox">
-                                <div class="product-image">
-                                    <img class="hover" src="images/shop/thumb/02.jpg" alt="product image">
-                                    <ul class="product-icon">
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-detail">
-                                    <div class="iq-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                            
-                                        </ul>
-                                    </div>
-                                    <h6><a href="#">Product Name</a></h6>
-                                    <p>Fashion</p>
-                                    <div class="shop-price">
-                                        <!-- <del>$130.00</del>&nbsp;&nbsp;<strong>$98.50</strong> -->
-                                        <p>PN <strong>HPX101</strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="iq-productbox">
-                                <div class="product-image">
-                                    <img class="hover" src="images/shop/thumb/03.jpg" alt="product image">
-                                    <ul class="product-icon">
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-detail">
-                                    <div class="iq-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                            
-                                        </ul>
-                                    </div>
-                                    <h6><a href="#">Product Name</a></h6>
-                                    <p>Fashion</p>
-                                    <div class="shop-price">
-                                        <!-- <del>$130.00</del>&nbsp;&nbsp;<strong>$98.50</strong> -->
-                                        <p>PN <strong>HPX101</strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="iq-productbox">
-                                <div class="product-image">
-                                    <img class="hover" src="images/shop/thumb/04.jpg" alt="product image">
-                                    <ul class="product-icon">
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-detail">
-                                    <div class="iq-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                            
-                                        </ul>
-                                    </div>
-                                    <h6><a href="#">Product Name</a></h6>
-                                    <p>Fashion</p>
-                                    <div class="shop-price">
-                                        <!-- <del>$130.00</del>&nbsp;&nbsp;<strong>$98.50</strong> -->
-                                        <p>PN <strong>HPX101</strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="iq-productbox">
-                                <div class="product-image">
-                                    <img class="hover" src="images/shop/thumb/01.jpg" alt="product image">
-                                    <ul class="product-icon">
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-detail">
-                                    <div class="iq-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                            
-                                        </ul>
-                                    </div>
-                                    <h6><a href="#">Product Name</a></h6>
-                                    <p>Fashion</p>
-                                    <div class="shop-price">
-                                        <!-- <del>$130.00</del>&nbsp;&nbsp;<strong>$98.50</strong> -->
-                                        <p>PN <strong>HPX101</strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="iq-productbox">
-                                <div class="product-image">
-                                    <img class="hover" src="images/shop/thumb/02.jpg" alt="product image">
-                                    <ul class="product-icon">
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-detail">
-                                    <div class="iq-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                            
-                                        </ul>
-                                    </div>
-                                    <h6><a href="#">Product Name</a></h6>
-                                    <p>Fashion</p>
-                                    <div class="shop-price">
-                                        <!-- <del>$130.00</del>&nbsp;&nbsp;<strong>$98.50</strong> -->
-                                        <p>PN <strong>HPX101</strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                            }
+                        }
+                        ?>
+                        
                     </div>
                 </div>
             </div>
@@ -346,10 +208,14 @@ Main Content -->
             <div class="row">
                 <div class="col-sm-12">
                     <div class="owl-carousel arrow-4 popup-gallery" data-autoplay="true" data-loop="true" data-nav="true" data-dots="false" data-items="4" data-items-laptop="3" data-items-tab="2" data-items-mobile="1" data-items-mobile-sm="1" data-margin="15">
+                        <?php
+                        if(!empty($products)){
+                            for($i=0;$i<5;$i++){
+                        ?>
                         <div class="item">
                             <div class="iq-productbox">
                                 <div class="product-image">
-                                    <img class="hover" src="images/shop/thumb/01.jpg" alt="product image">
+                                    <img class="hover" src="<?php echo $products[$i]['image'] ?>" alt="product image">
                                     <ul class="product-icon">
                                         <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
                                         <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
@@ -367,165 +233,20 @@ Main Content -->
                                             
                                         </ul>
                                     </div>
-                                    <h6><a href="#">Product Name</a></h6>
-                                    <p>Fashion</p>
+                                    <h6><a href="product-detail?id=<?php echo $products[$i]['id'] ?>"><?php echo $products[$i]['title'] ?></a></h6>
+                                    <?php  $subcat=getSubCategoryById($products[$i]['sub_category_id']); ?>
+                                    <p><?php echo $subcat['sub_category_title'] ?></p>
                                     <div class="shop-price">
                                         <!-- <del>$130.00</del>&nbsp;&nbsp;<strong>$98.50</strong> -->
-                                        <p>PN <strong>HPX101</strong></p>
+                                        <p>PN <strong>HPX<?php echo $products[$i]['id'] ?></strong></p>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="item">
-                            <div class="iq-productbox">
-                                <div class="product-image">
-                                    <img class="hover" src="images/shop/thumb/02.jpg" alt="product image">
-                                    <ul class="product-icon">
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-detail">
-                                    <div class="iq-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                            
-                                        </ul>
-                                    </div>
-                                    <h6><a href="#">Product Name</a></h6>
-                                    <p>Fashion</p>
-                                    <div class="shop-price">
-                                        <!-- <del>$130.00</del>&nbsp;&nbsp;<strong>$98.50</strong> -->
-                                        <p>PN <strong>HPX101</strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="iq-productbox">
-                                <div class="product-image">
-                                    <img class="hover" src="images/shop/thumb/03.jpg" alt="product image">
-                                    <ul class="product-icon">
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-detail">
-                                    <div class="iq-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                            
-                                        </ul>
-                                    </div>
-                                    <h6><a href="#">Product Name</a></h6>
-                                    <p>Fashion</p>
-                                    <div class="shop-price">
-                                        <!-- <del>$130.00</del>&nbsp;&nbsp;<strong>$98.50</strong> -->
-                                        <p>PN <strong>HPX101</strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="iq-productbox">
-                                <div class="product-image">
-                                    <img class="hover" src="images/shop/thumb/04.jpg" alt="product image">
-                                    <ul class="product-icon">
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-detail">
-                                    <div class="iq-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                            
-                                        </ul>
-                                    </div>
-                                    <h6><a href="#">Product Name</a></h6>
-                                    <p>Fashion</p>
-                                    <div class="shop-price">
-                                        <!-- <del>$130.00</del>&nbsp;&nbsp;<strong>$98.50</strong> -->
-                                        <p>PN <strong>HPX101</strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="iq-productbox">
-                                <div class="product-image">
-                                    <img class="hover" src="images/shop/thumb/01.jpg" alt="product image">
-                                    <ul class="product-icon">
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-detail">
-                                    <div class="iq-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                            
-                                        </ul>
-                                    </div>
-                                    <h6><a href="#">Product Name</a></h6>
-                                    <p>Fashion</p>
-                                    <div class="shop-price">
-                                        <!-- <del>$130.00</del>&nbsp;&nbsp;<strong>$98.50</strong> -->
-                                        <p>PN <strong>HPX101</strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item">
-                            <div class="iq-productbox">
-                                <div class="product-image">
-                                    <img class="hover" src="images/shop/thumb/02.jpg" alt="product image">
-                                    <ul class="product-icon">
-                                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                                        <li><a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a></li>
-                                    </ul>
-                                </div>
-                                <div class="product-detail">
-                                    <div class="iq-rating">
-                                        <ul class="list-inline">
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
-                                            <li class="list-inline-item"><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
-                                            
-                                        </ul>
-                                    </div>
-                                    <h6><a href="#">Product Name</a></h6>
-                                    <p>Fashion</p>
-                                    <div class="shop-price">
-                                        <!-- <del>$130.00</del>&nbsp;&nbsp;<strong>$98.50</strong> -->
-                                        <p>PN <strong>HPX101</strong></p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <?php
+                            }
+                        }
+                        ?>
                     </div>
                 </div>
             </div>
@@ -560,7 +281,7 @@ Main Content -->
                         </li>
                     </ul> -->
                     <div class="btn-box">
-                        <a class="button-line iq-big" target="_blank" href="all-products.html" role="button" style="color: white;">View Sample Products <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+                        <a class="button-line iq-big" target="_blank" href="all-products" role="button" style="color: white;">View Sample Products <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>
